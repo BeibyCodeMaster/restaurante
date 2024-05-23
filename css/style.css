@@ -1,0 +1,486 @@
+/** ESTILOS GENERALES **/
+:root {
+    --light-accent-color : #FFFAE0;
+    --dark-accent-color: #00293F;
+    --light-text-color: white;
+    --dark-text-color: #00293F;
+}
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: SantElia-Bold;
+    src: url("../fonts/SantElia_2/SantElia/SantEliaRoughAlt-BoldThrDEMO.otf");
+}
+@font-face {
+    font-family: SantElia-Bold-demo;
+    src: url("../fonts/SantElia_2/SantElia/SantEliaScript-BoldDEMO.otf");
+}
+
+html{
+    font-size: 16px;  /* Tamaño base de la fuente */
+}
+
+html,
+body {
+    width     : 100%;  
+    min-height: 100vh; 
+    background-color: var(--dark-accent-color);   
+}
+body{
+    font-size: 1rem;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+h1 {
+    font-size: 1.5rem;
+}
+h2  {
+    font-size: 1.2rem;
+}
+P  {
+    font-size: 1rem;
+}
+
+/** ESTILOS GENERALES FIN **/
+/** GRID **/
+.grid-content {
+    display      : grid;
+    grid-template: minmax(150px, 200px) minmax(250px, 300px) 250px 30px minmax(1000px, 2000px) 30px 100px / 100%;
+    grid-template-areas:
+        "          header           "
+        "         banner           "
+        "         options           "
+        "         .                 "
+        "         main              "
+        "         .                 "
+        "        footer             ";
+}
+.header {
+    grid-area       : header;
+    background-color: var(--light-accent-color);
+}
+.banner {
+    grid-area       : banner;
+}
+.options {
+    grid-area       : options;
+}
+.main {
+    grid-area       : main;    
+}
+.footer {
+    grid-area       : footer;
+    background-color: var(--light-accent-color)
+}
+.grid-container {
+    display      : grid;
+    grid-template: repeat(5, 1fr) / 1fr;
+    grid-template-areas:
+        " main__article--profile "
+        " main__article--orders "
+        " main__article--bookings "
+        " main__article--bills "
+        " main__article--fidelity ";
+}
+.main__article--profile {
+    grid-area: main__article--profile;
+}
+.main__article--orders {
+    grid-area: main__article--orders;
+}
+.main__article--bookings {
+    grid-area: main__article--bookings;
+}
+.main__article--bills {
+    grid-area: main__article--bills;
+}
+.main__article--fidelity {
+    grid-area: main__article--fidelity;
+}
+.grid-container-article{
+display: grid;
+grid-template: 1fr 0.5fr 0.5fr 1fr /  1fr;
+grid-template-areas:
+"."
+"main__h2"
+"main__a"
+".";
+}
+.main__h2{
+grid-area:main__h2;    
+}
+.main__a{
+    grid-area:main__a;   
+}
+.main__article{
+    row-gap: 2%;
+}
+.main__a{
+    justify-self: center;
+    align-self: center;
+}
+/** GRID FIN **/
+/** FLEX-BOX **/
+.flex-content--row {
+    display: flex;
+}
+.flex-content--column {
+    display  : flex;
+    flex-flow: wrap column;
+}
+.flex-content--center {
+    justify-content: center;
+    align-items    : center;
+}
+/** FLEX-BOX FIN **/
+/** HEADER **/
+.header__nav {  
+    height: 100%
+}
+.header__ul {
+    display: none;
+}
+.header__container{
+    width: 100%;
+    height: 100%;
+    row-gap: 1%
+}
+.header__img {
+   max-width:min(150px, 100%);   
+}
+.header__h1{
+   font-family:SantElia-Bold; 
+ }
+ .header__h3{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform:capitalize ;
+    letter-spacing: 2px;
+  }
+/** HEADER FIN **/
+/** BANNER**/
+.banner__h1{
+    line-height: 2;
+    text-transform: uppercase;
+}
+.banner {
+    animation      : banner 10s infinite linear alternate;
+    background-size: cover;
+    background-position: center;
+    position       : relative; 
+    color:white;
+    text-align: center;
+}
+.banner__h2--desktop{
+    display: none;
+}
+
+@keyframes banner {
+
+    0%,
+    20% {
+        background-image: url("../img/foot-one.jpg");
+    }
+
+    25%,
+    45% {
+        background-image: url("../img/EnsalaDeVerduras.jpg");
+    }
+
+    50%,
+    70% {
+        background-image: url("../img/HamburguesaIrresistible.jpg");
+    }
+
+    75%,
+    100% {
+        background-image: url("../img/PlatoCampestre.jpg");
+    }
+}
+.banner__h1
+.banner__h2
+.banner__h2{
+    color:white
+}
+/** BANNER FIN **/
+/** OPTIONS **/
+.options{
+    justify-content: center;
+}
+.section-options--text{    
+    padding:0 1%;
+    line-height: 1.5;
+}
+.options__h1{
+    text-transform: uppercase;
+    color: var(--light-accent-color);
+}
+.options__p{
+    color:var(--light-text-color)
+}
+/** OPTIONS FIN **/
+/** MAIN **/
+.main {
+    height : 100%;
+    row-gap: 2%;
+}
+.main__article {
+    flex-grow: 1;
+}
+.main__h2{
+    color: var(--light-text-color);
+}
+.main__a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #3088e0;
+    padding: 16px 37px;
+    border-radius: 50px;
+    display: inline-block;
+    width: max-content;
+}
+.main__article--profile,
+.main__article--orders,
+.main__article--bookings,
+.main__article--bills,
+.main__article--fidelity {
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    background-position: center top;
+    position           : relative;
+    text-align         : center;
+}
+.main__article--profile {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../img/profile5.png");
+}
+.main__div--profile:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0)), url("../img/profile5.png");
+}
+.main__article--orders {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../img/pedido.png");
+}
+.main__article--orders:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("../img/pedido.png");
+}
+.main__article--bookings {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../img/reserva.png");
+}
+.main__article--bookings:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("../img/reserva.png");
+}
+.main__article--bills {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../img/factura.png");
+}
+.main__article--bills:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("../img/factura.png");
+}
+.main__article--fidelity {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("../img/fidelidad.png");
+}
+.main__article--fidelity:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("../img/fidelidad.png");
+}
+.main__a{
+text-transform: uppercase;
+font-weight: 300;
+}
+/** MAIN FIN **/
+/** FOOTER **/
+.footer__h1{
+    text-transform: uppercase;
+}
+.footer{
+    text-align: center;
+}
+.footer__h1{
+    font-size: 1rem;
+    color: var(--dark-text-color);
+}
+/** FOOTER FIN **/
+/** MEDIA QUERY **/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+/** ESTILOS GENERALES **/
+
+/** ESTILOS GENERALES  FIN**/
+
+    /** HEADER **/
+    /** HEADER FIN **/
+    /** BANNER**/
+    /** BANNER FIN **/
+    /** OPTIONS**/
+    .options__h1{
+        text-align: center;
+    }
+    /** OPTIONS FIN **/
+    /** MAIN **/
+    /** MAIN FIN **/
+    /** FOOTER **/
+    /** FOOTER FIN **/
+}
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2  {
+        font-size: 1.5rem;
+    }
+    P  {
+        font-size: 1.2rem;
+    }
+    /** GRID **/
+    .grid-content {
+        display      : grid;
+        grid-template: minmax(150px, 300px) minmax(250px, 400px) 200px 30px minmax(1000px, 2000px) 30px 100px/ repeat(2, 1fr);
+        grid-template-areas:
+            "          header                     header           "
+            "         banner                     banner             "
+            "         options                   options             "
+            "         .                          .                 "
+            "         main                       main              "
+            "         .                          .                 "
+            "        footer                     footer             ";
+    }
+
+    .grid-container {
+        display      : grid;
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+        grid-template-areas:
+            " main__article--profile   main__article--orders"
+            " main__article--bookings    main__article--bills"
+            " main__article--fidelity  main__article--fidelity";    }
+
+    /** GRID FIN**/
+    /** FLEXBOX **/
+    /** FLEXBOX FIN**/    
+    /** HEADER **/
+    .header__ul {
+        display: none;
+    }
+    /** HEADER FIN **/
+    /** BANNER**/
+    .banner__h2--desktop{
+        display: block;
+    }
+    /** BANNER FIN **/
+    /** OPTIONS **/
+    /** OPTIONS FIN **/
+    /** MAIN **/
+    .main {
+        gap: 2%;
+    }
+    /** MAIN FIN **/
+    /** FOOTER **/
+    /** FOOTER FIN **/
+}
+@media screen and (min-width: 1024px) {
+    /** GRID **/
+    .grid-content {
+        display      : grid;
+        grid-template: 100px 450px 150px 50px minmax(500px, 600px) 50px 100px/ 0.1fr 8fr 0.1fr;
+        grid-template-areas:
+            "          header                     header           header            "
+            "         banner                     banner            banner           "
+            "         options                   options             options         "
+            "         .                          .                     .             "
+            "         .                        main                    .             "
+            "         .                          .                     .             "
+            "        footer                     footer                 footer        ";
+    }
+
+    .grid-container {
+        display      : grid;
+        grid-template: 1fr / repeat(5, 1fr);
+        grid-template-areas:
+            " main__article--profile   main__article--orders main__article--bookings    main__article--bills main__article--fidelity";
+            column-gap:1%; 
+           
+    }
+    /** GRID FIN**/
+    /** FLEXBOX **/
+    /** FLEXBOX FIN**/    
+    /** HEADER **/
+    .header__ul {
+        display: flex; 
+        justify-content: flex-end;
+        align-items: center;      
+        height: 100%;
+        list-style-type: none;      
+    }
+    .header__container, .header__ul{
+        width: 50%;
+    }
+    .header__img--a {
+        max-width: clamp(50px,30%,70px);
+    }
+    .header__li{
+        max-width: 10%;
+    }
+    .header__container{
+        flex-direction: row;
+        justify-content: flex-start;
+        column-gap: 1%;
+    }
+    .header__img {
+        width: 110px;
+        margin-left: 5%;
+        padding: 0.5%;
+    }
+    /** HEADER FIN **/
+    /** BANNER **/
+    .banner__h2--desktop {
+        display: block;
+    }
+    /** BANNER FIN **/
+    /** OPTIONS **/
+    .section-options--text {
+        padding-left: 5vw;
+    }
+    /** OPTIONS FIN **/
+    /** MAIN **/
+    /** MAIN FIN **/
+    /** FOOTER **/
+    /** FOOTER FIN **/
+}
+@media screen and (min-width: 1440px) {
+    /** GRID**/
+    .grid-content {
+        display      : grid;
+        grid-template: 100px 450px 150px 50px minmax(500px, 600px) 50px 100px/ 1fr 8fr 1fr;
+        grid-template-areas:
+            "          header                     header           header            "
+            "         banner                     banner            banner           "
+            "         options                   options             options         "
+            "         .                          .                     .             "
+            "         .                        main                    .             "
+            "         .                          .                     .             "
+            "        footer                     footer                 footer        ";
+
+    }
+    /** GRID FIN**/
+    /** FLEXBOX **/
+    /** FLEXBOX FIN**/    
+    /** HEADER **/
+    /** HEADER FIN **/
+    /** BANNER**/
+    /** BANNER FIN **/
+    /** OPTIONS**/
+    .section-options--text {
+        padding-left: 10vw;
+    }
+    /** OPTIONS FIN **/
+    /** MAIN **/
+    /** MAIN FIN **/
+    /** FOOTER **/
+    /** FOOTER FIN **/
+}
+
+/**  MEDIA QUERY FIN **/
